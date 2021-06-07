@@ -20,8 +20,6 @@ func Filter(array[] int, callback func(int, int) bool) []int {
 	return newArray
 }
 
-// [1,2,3,4,5].reduce((acc, cur) => acc + cur, {});
-
 func Reduce(array[] int, callback func(int, int, int) int, initialState int) int {
 	result := initialState
 	for i, v := range array {
