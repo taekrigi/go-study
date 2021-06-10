@@ -2,26 +2,6 @@ package main
 
 import "fmt"
 
-type Sports interface {
-	sound()
-}
-
-type Football struct {}
-
-func (football *Football) sound() {
-	fmt.Println("pung...! pung...!")
-}
-
-type BaseBall struct {}
-
-func (baseball *BaseBall) sound() {
-	fmt.Println("ddang...! ddang...!")
-}
-
-func PrintSports(sports Sports) {
-	sports.sound()
-}
-
 func Map(array []interface{}, callback func(interface{}, int) interface{}) []interface{} {
 	var newArray []interface{}
 	for i, v := range array {
@@ -36,10 +16,4 @@ func main() {
 		return "wonderful"
 	})
 	fmt.Println(newArray)
-
-	football := Football{}
-	baseball := BaseBall{}
-
-	PrintSports(&football)
-	PrintSports(&baseball)
 }
